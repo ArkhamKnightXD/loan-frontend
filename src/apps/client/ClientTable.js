@@ -96,10 +96,8 @@ export default function ClientTable(props) {
                                             <TableCell onClick={() => getActualData(row.id)}>{row.name}</TableCell>
                                             <TableCell onClick={() => getActualData(row.id)} align="left">{row.lastName}</TableCell>
                                             <TableCell onClick={() => getActualData(row.id)} align="left">{row.direction}</TableCell>
-                                            <TableCell onClick={() => getActualData(row.id)} align="right">{row.phoneNumber}</TableCell>
-                                            {/*<TableCell onClick={() => getActualData(row.id)} align="right">{row.age}</TableCell>*/}
-                                            <TableCell onClick={() => getActualData(row.id)} align="right">{row.loanQuantity}</TableCell>
-                                            <TableCell onClick={() => getActualData(row.id)} align="right">{row.loanTerms}</TableCell>
+                                            <TableCell onClick={() => getActualData(row.id)} align="left">{row.phoneNumber}</TableCell>
+                                            <TableCell onClick={() => getActualData(row.id)} align="left">{row.age}</TableCell>
 
                                             <TableCell><Button variant="contained" color="secondary"
                                                                onClick={() => deleteClient(row.id)}>Eliminar</Button> </TableCell>

@@ -17,7 +17,6 @@ const headCells = [
         disablePadding: false,
         label: 'Apellido',
     },
-    //El id debe de ser igual que la propiedad que se envia desde el backend
     {
         id: 'direction',
         numeric: false,
@@ -26,27 +25,15 @@ const headCells = [
     },
     {
         id: 'phoneNumber',
-        numeric: true,
+        numeric: false,
         disablePadding: false,
         label: 'Número',
     },
-    // {
-    //     id: 'age',
-    //     numeric: true,
-    //     disablePadding: false,
-    //     label: 'Edad',
-    // },
     {
-        id: 'loanQuantity',
-        numeric: true,
+        id: 'age',
+        numeric: false,
         disablePadding: false,
-        label: 'Cantidad',
-    },
-    {
-        id: 'loanTerms',
-        numeric: true,
-        disablePadding: false,
-        label: 'Cantidad de Plazos',
+        label: 'Edad',
     },
     {
         id: 'options',
@@ -107,8 +94,6 @@ const ClientApp = () => {
             <ClientTable dataList={clients} getActualData={getActualClient}
                          deleteClient={deleteClient} headCells={headCells}/>
 
-            {/*Si no hay necesidad de tener componentes anidados, lo ideal es llamarlo todos aqui, para asi no tener que
-            enviar props innecesarios a componentes intermedios para pasarlos al componente deseado*/}
             <FormDialog isDialogOpen={isDialogOpen} setClients={setClients}
                         handleClose={handleCloseDialog} actualClient={actualClient} />
 

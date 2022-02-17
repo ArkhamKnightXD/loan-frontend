@@ -14,8 +14,7 @@ export default function FormDialog(props) {
     const [lastName, setLastName] = useState("");
     const [direction, setDirection] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
-    const [loanQuantity, setLoanQuantity] = useState(0);
-    const [loanTerm, setLoanTerm] = useState(0);
+    const [age, setAge] = useState("");
 
 
     useEffect(() => {
@@ -27,8 +26,7 @@ export default function FormDialog(props) {
             setLastName(actualClient.lastName);
             setDirection(actualClient.direction);
             setPhoneNumber(actualClient.phoneNumber);
-            setLoanQuantity(actualClient.loanQuantity);
-            setLoanTerm(actualClient.loanTerm);
+            setAge(actualClient.age);
         }
 
     }, [actualClient]);
@@ -42,7 +40,7 @@ export default function FormDialog(props) {
 
     const handleSubmit = () => {
 
-        const clientToSave = {id, name, lastName, direction, phoneNumber, loanQuantity, loanTerm};
+        const clientToSave = {id, name, lastName, direction, phoneNumber, age};
 
         if (id)
             updateClient(clientToSave, setClients);
@@ -61,8 +59,7 @@ export default function FormDialog(props) {
         setLastName("");
         setDirection("");
         setPhoneNumber("");
-        setLoanQuantity(0);
-        setLoanTerm(0);
+        setAge("");
 
         handleClose();
     };
@@ -100,11 +97,9 @@ export default function FormDialog(props) {
                     <GeneralTextField value={direction} handleChange={generalHandleChange}
                                       label={"Dirección"} type={"text"} setData={setDirection}/>
 
-                    <GeneralTextField value={loanQuantity} handleChange={generalHandleChange}
-                                      label={"Cantidad"} type={"number"} setData={setLoanQuantity}/>
+                    <GeneralTextField value={age} handleChange={generalHandleChange}
+                                      label={"Edad"} type={"number"} setData={setAge}/>
 
-                    <GeneralTextField value={loanTerm} handleChange={generalHandleChange}
-                                      label={"Plazos"} type={"number"} setData={setLoanTerm}/>
 
                 </DialogContent>
 
